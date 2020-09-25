@@ -6,6 +6,12 @@
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet"> 
     <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+            font-size:16px;
+        }
         body{
             display:grid;
             grid-template-areas: 
@@ -17,12 +23,16 @@
         }
         #header{
             grid-area: header;
-            background: url(images/logo.png) no-repeat 10vw center;/*vw ekranın yüzde 10u */
+            background: url(images/logo.png) no-repeat 10vw center white;/*vw ekranın yüzde 10u */
             background-size: 15%;
             display: flex;
             flex-direction: row;
             justify-content: flex-end;
             align-items: center;
+
+            position:sticky;
+            top:0;
+            z-index:99;
     
         }
         #header > a{
@@ -67,8 +77,66 @@
             grid-area:footer;
         }
         div{
-            background-color: grey;
+            background-color: none;
             border:1px solid red;
+        }
+        .intro{
+            display:flex;
+            flex-direction: row;
+            position: relative;
+        }
+        .intro::before{
+            content: ' ';
+            background: url(featured.jpg) no-repeat center center/cover ;
+            position:absolute;
+            top:0;
+            left:0;
+            width: 100%;
+            height: 100%;
+            opacity:0.7;
+        }
+        .introKapsayici{
+            flex:0 0 40%; /*büyüme,küçülme,varsayılan row genişlik column yükseklik */
+            border:none;
+            margin-left: 10vw;
+            margin-top:2rem;
+            z-index:98;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .introKapsayici h5{
+            display: block;
+            background-color: blue;
+            width: 11rem;
+            padding:0.5rem;
+            border-radius: 0.5rem;
+            font-family: 'Roboto', sans-serif;
+        }
+        .introKapsayici h3{
+            font-weight: bolder;
+            font-size:2rem;
+            color:black;
+            font-family: 'Roboto', sans-serif;
+
+        }
+        .introKapsayici p{
+            color:white;
+
+        }
+        .introKapsayici a.btn{
+            display: block;
+            background-color: blue;
+            color:white;
+            width: 8rem;
+            padding:0.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            text-align:center;
+            opacity: 0.8;
+            margin-top:0.5rem;
+            align-self: flex-end;
+            margin-right:3rem;
         }
         .article{
             display: grid;
@@ -117,7 +185,15 @@
        
     </div>
     <div id="content">
-        <div class="intro">Intro Area</div>
+        <div class="intro">
+            <div class="introKapsayici">
+                <h5>Kategori Başlığı</h5>
+                <h3>Haber Başlığı</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia neque, assumenda sequi nostrum fugiat ratione nisi hic quibusdam mollitia illum, quae quaerat sint debitis, incidunt a. Provident sunt animi expedita, velit quasi, ipsum totam, consequuntur maiores autem alias quaerat amet.</p>
+                <a href="#" class="btn">Detaylar</a>
+            </div>
+           
+        </div>
         <div class="article">
             <div class="contentBox">Content 1</div>
             <div class="contentBox">Content 2</div>

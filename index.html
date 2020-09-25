@@ -11,7 +11,7 @@
             "header"
             "content"
             "footer";
-            height: 1500px;
+            height: 2000px;
             grid-template-rows: 100px 1fr 400px;
         }
         #header{
@@ -26,13 +26,21 @@
             grid-area:footer;
         }
         div{
-            background-color: white;
+            background-color: grey;
             border:1px solid red;
         }
         .article{
             display: grid;
             grid-template-columns:1fr 1fr 1fr;
             grid-template-rows:3fr 5fr 3fr;
+            grid-gap: 1rem;/* yazı boyutu*/
+        }
+        .article > div:nth-child(1) {
+            grid-column:1 / span 2;
+        }
+        .article > div:last-child{
+            grid-column-start: 4;
+            grid-column-end: 2;
         }
         #footer{
             display: grid;
@@ -43,6 +51,10 @@
             display:grid;
             grid-column: 1 / span 4;
             grid-row: 2 / 3;
+        }
+        .article > div {
+            border: none;
+            background:white;
         }
     </style>
 </head>
@@ -58,8 +70,6 @@
             <div class="contentBox">Content 5</div>
             <div class="contentBox">Content 6</div>
             <div class="contentBox">Content 7</div>
-            <div class="contentBox">Content 8</div>
-            <div class="contentBox">Content 9</div>
         </div>
     </div>
     <div id="footer">

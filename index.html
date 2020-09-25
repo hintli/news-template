@@ -16,6 +16,18 @@
         }
         #header{
             grid-area: header;
+            background: url(images/logo.png) no-repeat 5vw center;/*vw ekranın yüzde 10u */
+            background-size: 15%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+    
+        }
+        #header > a{
+            color: gray;
+            text-decoration: none;
+            margin:0.5rem;
         }
         #content{
             grid-area: content;
@@ -56,10 +68,20 @@
             border: none;
             background:white;
         }
+        
     </style>
 </head>
 <body>
-    <div id="header"></div>
+    <div id="header">
+        <a href=""><span>İnsta</span></a>
+        <a href=""><span>Face</span></a>
+        <a href=""><span>Twit</span></a>
+        <a href=""> <span>Yout</span></a>
+        
+        
+        
+       
+    </div>
     <div id="content">
         <div class="intro">Intro Area</div>
         <div class="article">

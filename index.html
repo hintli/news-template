@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet"> 
     <style>
         body{
             display:grid;
@@ -16,11 +17,11 @@
         }
         #header{
             grid-area: header;
-            background: url(images/logo.png) no-repeat 5vw center;/*vw ekranın yüzde 10u */
+            background: url(images/logo.png) no-repeat 10vw center;/*vw ekranın yüzde 10u */
             background-size: 15%;
             display: flex;
             flex-direction: row;
-            justify-content: center;
+            justify-content: flex-end;
             align-items: center;
     
         }
@@ -28,6 +29,34 @@
             color: gray;
             text-decoration: none;
             margin:0.5rem;
+        }
+        #header > ul {
+            list-style: none;
+            display:flex;
+            flex-direction: row;
+            margin-left: 15vw;
+            margin-right: 10vw;
+        }
+
+        #header > ul >li {
+            margin: 0vw 1vw;
+        }
+
+        #header > ul li a {
+            background: red;
+            color:white;
+            font-weight: bolder;
+            text-decoration: none;
+            text-align:center;
+            padding:0.25rem;
+            font-family: 'Roboto', sans-serif;
+
+        }
+        #header ul a.anasayfa{
+            background-color: gray;
+        }
+        #header ul a:hover{
+            color:black;
         }
         #content{
             grid-area: content;
@@ -46,6 +75,8 @@
             grid-template-columns:1fr 1fr 1fr;
             grid-template-rows:3fr 5fr 3fr;
             grid-gap: 1rem;/* yazı boyutu*/
+            margin-left: 15vw;
+            margin-right: 10vw;
         }
         .article > div:nth-child(1) {
             grid-column:1 / span 2;
@@ -78,7 +109,10 @@
         <a href=""><span>Twit</span></a>
         <a href=""> <span>Yout</span></a>
         
-        
+        <ul>
+            <li><a href="#" class="anasayfa">Anasayfa</a></li>
+            <li><a href="#">İletişim</a></li>
+        </ul>
         
        
     </div>

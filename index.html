@@ -13,6 +13,7 @@
             font-size:16px;
         }
         body{
+            background-color: grey;
             display:grid;
             grid-template-areas: 
             "header"
@@ -73,13 +74,8 @@
             display:grid;
             grid-template-rows:3fr 8fr;
         }
-        #footer{
-            grid-area:footer;
-        }
-        div{
-            background-color: none;
-            border:1px solid red;
-        }
+        
+        
         .intro{
             display:flex;
             flex-direction: row;
@@ -141,31 +137,198 @@
         .article{
             display: grid;
             grid-template-columns:1fr 1fr 1fr;
-            grid-template-rows:3fr 5fr 3fr;
+            grid-template-rows:50px 3fr 5fr 3fr;
             grid-gap: 1rem;/* yazı boyutu*/
             margin-left: 15vw;
             margin-right: 10vw;
+            border:none;
+            margin-bottom:1rem;
         }
         .article > div:nth-child(1) {
+            grid-column:1 / span 3;
+        }
+        .article > div:nth-child(2){
             grid-column:1 / span 2;
+        }
+        .article > div:nth-child(3){
+            background:white;
+            border-radius:2rem 0 2rem 2rem;
+        }
+        .article > div:nth-child(3){
+            
         }
         .article > div:last-child{
             grid-column-start: 4;
             grid-column-end: 2;
         }
-        #footer{
-            display: grid;
-            grid-template-columns:repeat(4,1fr);
-            grid-template-rows: 3fr 1fr;
+        
+        .article > div {
+            border: none;
+            background:white;
         }
+        .article .contentBaslik {
+            background-color: none;
+            padding: 10px 40px;
+            
+            
+        }
+        .article .contentBaslik h3{
+            font-size:2rem;
+            font-weight: bolder;
+        }
+
+        .article .contentBox {
+            display:flex;
+            flex-direction: row;
+            padding:1rem;
+    
+        }
+
+        .article .contentBox .boxKapsayici{/* nth(2) koy*/
+            /*border:none;
+            background:none;*/
+            display: flex;
+            flex-direction: column;
+            padding: 0.4rem;
+            margin-top:3rem;
+            margin: 1rem;
+        }
+        .article .contentBox h5.eglenceBaslik{
+            background-color: red;
+        }
+
+        .article .contentBox h5.sporBaslik{
+            background-color: yellow;
+        }
+
+        .article .contentBox h5.teknolojiBaslik{
+            background-color: purple;
+        }
+
+        .article .contentBox h3{
+            font-size:2rem;
+            margin: 1rem 0.25rem;
+        }
+
+        .article .contextBox p{
+            font-size:1.2rem;
+            margin:0.25rem;
+
+        }
+
+        .article .contentBox h5 {
+            display: block;
+            color: black;
+            width: 7rem;
+            padding: 0.25rem 1rem;
+            border-radius: 1rem;
+        }
+
+
+        .article .contentBox > img {
+            width: 300px;
+            height: auto;
+        }
+
+        #footer{
+            
+            grid-area:footer;
+            grid-gap:25px;
+            display: grid;
+            grid-template-columns:1.5fr 1fr 1fr 1.6fr;
+            grid-template-rows: 3fr 1fr;
+            /*margin-left:10vw;
+            margin-right: 10vw;*/
+            border:none;
+            background-color: rgb(34, 32, 32);
+        }
+       
+        #footer div:first-child{
+            margin-left:10vw;
+        }
+
+        #footer div:nth-child(4){
+            margin-left:2vw;
+            margin-right:10vw;
+        }
+
+        .footerBox {
+            padding:1rem;
+        }
+
+        .footerBox img{
+            width: 68%;
+            height: auto;
+            margin-bottom:1rem;
+        }
+
+        .footerBox p{
+            font-size:1.2rem;
+            color:white;
+        }
+        .footerBox h3{
+            color:white;
+            font-size: 2rem;
+        }
+        .footerBox form#iletisimForm{
+            display: flex;
+            flex-direction: column;
+            
+        }
+        .footerBox form button{
+            margin:1rem 0;
+            padding: 1rem 0;
+            background-color: red;
+            font-weight:bolder;
+            color:white;
+        }
+
+        .footerBox ul{
+            list-style:none;
+            color:white;
+        }
+
+        .footerBox ul li{
+            border-bottom:1px dotted wheat;
+            font-size:1.2rem;
+            padding:0.5rem;
+        }
+
+        .footerBox a.uyeBtn{
+            display: block;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            width: 7rem;
+            height: 2rem;
+            text-align: center;
+            background-color: wheat;
+            color:black;
+            text-decoration: none;
+            margin-top:1rem;
+            border-radius:2rem;
+
+        }
+        
         .copyRightBox{
             display:grid;
             grid-column: 1 / span 4;
             grid-row: 2 / 3;
+            margin-right:10vw;
+            margin-left:10vw;
+            margin-bottom:1rem;
+            margin-top:1rem;
+            border:none;
+            opacity:0.5;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
         }
-        .article > div {
-            border: none;
-            background:white;
+        div{
+            background-color: none;
+            /*border:1px solid red;*/
         }
         
     </style>
@@ -187,7 +350,7 @@
     <div id="content">
         <div class="intro">
             <div class="introKapsayici">
-                <h5>Kategori Başlığı</h5>
+                <h5 class="eglenceBaslik">Kategori Başlığı</h5>
                 <h3>Haber Başlığı</h3>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia neque, assumenda sequi nostrum fugiat ratione nisi hic quibusdam mollitia illum, quae quaerat sint debitis, incidunt a. Provident sunt animi expedita, velit quasi, ipsum totam, consequuntur maiores autem alias quaerat amet.</p>
                 <a href="#" class="btn">Detaylar</a>
@@ -195,20 +358,94 @@
            
         </div>
         <div class="article">
-            <div class="contentBox">Content 1</div>
-            <div class="contentBox">Content 2</div>
-            <div class="contentBox">Content 3</div>
-            <div class="contentBox">Content 4</div>
-            <div class="contentBox">Content 5</div>
-            <div class="contentBox">Content 6</div>
-            <div class="contentBox">Content 7</div>
+            <div class="contentBaslik"><h3>EDİTÖRÜN SEÇTİKLERİ</h3></div>
+
+            <div class="contentBox">
+                <img src="images/articles/ent1.jpg" alt="">
+                <div class="boxKapsayici">
+                    <h5 class="sporBaslik">SPOR</h5>
+                    <h3>SPOR HABER 1</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque vel magnam quaerat culpa explicabo asperiores similique expedita nisi adipisci officiis?</p>            
+                </div>
+
+            </div>
+            <div class="contentBox">
+                <div class="boxKapsayici">
+                    <h5 class="sporBaslik">SPOR</h5>
+                    <h3>SPOR HABER 1</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque vel magnam quaerat culpa explicabo asperiores similique expedita nisi adipisci officiis?</p>            
+                </div>
+            </div>
+            <div class="contentBox">
+
+                <div class="boxKapsayici">
+                    <h5 class="eglenceBaslik">SPOR</h5>
+                    <h3>SPOR HABER 1</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque vel magnam quaerat culpa explicabo asperiores similique expedita nisi adipisci officiis?</p>            
+                </div>
+
+            </div>
+            <div class="contentBox">
+                <div class="boxKapsayici">
+                    <h5 class="sporBaslik">SPOR</h5>
+                    <h3>SPOR HABER 1</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque vel magnam quaerat culpa explicabo asperiores similique expedita nisi adipisci officiis?</p>            
+                </div>
+
+            </div>
+            <div class="contentBox">
+                <div class="boxKapsayici">
+                    <h5 class="sporBaslik">SPOR</h5>
+                    <h3>SPOR HABER 1</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque vel magnam quaerat culpa explicabo asperiores similique expedita nisi adipisci officiis?</p>            
+                </div>
+
+            </div>
+            <div class="contentBox">
+                <div class="boxKapsayici">
+                    <h5 class="sporBaslik">SPOR</h5>
+                    <h3>SPOR HABER 1</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque vel magnam quaerat culpa explicabo asperiores similique expedita nisi adipisci officiis?</p>            
+                </div>
+                
+            </div>
+            <div class="contentBox">
+                <img src="images/articles/ent1.jpg" alt="">
+                <div class="boxKapsayici">
+                    <h5 class="sporBaslik">SPOR</h5>
+                    <h3>SPOR HABER 1</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque vel magnam quaerat culpa explicabo asperiores similique expedita nisi adipisci officiis?</p>            
+                </div>
+            </div>
         </div>
     </div>
     <div id="footer">
-        <div class="footerBox">Footer 1</div>
-        <div class="footerBox">Footer 2</div>
-        <div class="footerBox">Footer 3</div>
-        <div class="footerBox">Footer 4</div>
+        <div class="footerBox">
+            <img src="images/logo.png" alt="">
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="footerBox">
+            <h3>İLETİŞİM FORMU</h3>
+            <p>MAil adresinizi yazın, size ulaşalım</p>
+            <form action="" id="iletisimForm">
+                <input type="text" id="emailBox">
+                <button id="gonderBtn">Gönder</button>
+            </form>
+        </div>
+        <div class="footerBox">
+            <h3>TAVSİYE SİTELER</h3>
+            <ul>
+                <li>Site 1</li>
+                <li>Site 2</li>
+                <li>Site 3</li>
+                <li>Site 4</li>
+            </ul>
+        </div>
+        <div class="footerBox">
+            <h3>ÜYELİK</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam eaque necessitatibus similique velit natus magni reiciendis qui quisquam iste sit!</p>
+            <a href="#" class="uyeBtn">Üye Ol</a>
+        </div>
         <div class="copyRightBox">CopyRightBox</div>
     </div>
 
